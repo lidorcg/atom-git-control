@@ -149,11 +149,12 @@ module.exports =
       atomRefresh()
       return parseDefault(data)
 
-  commit: (message) ->
+  commit: (message, amend) ->
     message = message or Date.now()
     message = message.replace(/"/g, '\\"')
+    amendOpt = if amend then "--amend " else "--allow-empty-message"
 
-    return callGit "commit --allow-empty-message -m \"#{message}\"", (data) ->
+    return callGit "commit #{amendOpt} -m \"#{message}\"", (data) ->
       atomRefresh()
       return parseDefault(data)
 

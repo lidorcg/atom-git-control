@@ -41,10 +41,6 @@ module.exports = GitControl =
 
     return
 
-  updatePaths: ->
-     git.setProjectIndex(0)
-     return
-
   updateViews: ->
     activeView = atom.workspace.getActivePane().getActiveItem()
     for v in views when v is activeView

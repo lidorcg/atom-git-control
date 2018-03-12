@@ -165,13 +165,15 @@ class GitControlView extends View
     return unless @filesView.hasSelected()
 
     msg = @commitDialog.getMessage()
+    amend = @commitDialog.amend()
+    @commitDialog.resetAmend()
 
     files = @filesView.getSelected()
     @filesView.unselectAll()
 
     git.add(files.add)
       .then -> git.remove(files.rem)
-      .then -> git.commit(msg)
+      .then -> git.commit(msg, amend)
       .then => @update()
     return
 
