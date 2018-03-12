@@ -1,4 +1,6 @@
+git = require 'git-promise'
 Dialog = require './dialog'
+Core = require '../git'
 
 module.exports =
 class CommitDialog extends Dialog
@@ -17,7 +19,7 @@ class CommitDialog extends Dialog
         @button click: 'cancel', =>
           @i class: 'icon x'
           @span 'Cancel'
-        @input type: 'checkbox', id: 'amend', outlet: 'amendCheckbox'
+        @input type: 'checkbox', id: 'amend', click: 'amendClick', outlet: 'amendCheckbox'
         @label 'Amend', for: 'amend'
 
   activate: ->
@@ -25,6 +27,25 @@ class CommitDialog extends Dialog
     @msg.val('')
     @msg.focus()
     return
+
+  amendClick: ->
+    cwd = Core.isInitialised()
+    message_out = @msg
+    amend = @amend()
+    return git('log -1 --pretty=%B', {cwd: cwd})
+      .then (prev_message) ->
+        if (amend)
+          txt = prev_message
+          current_txt = message_out.val()
+          if current_txt.length > 0
+            if current_txt.match(/\n$/)
+              txt = txt + '\n'
+            txt = txt + current_txt
+
+          message_out.val(txt)
+        else
+          txt = message_out.val()
+          message_out.val(txt.replace(RegExp(prev_message), ''))
 
   amend: ->
     return @amendCheckbox.prop('checked')
