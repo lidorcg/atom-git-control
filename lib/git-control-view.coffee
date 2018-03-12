@@ -73,7 +73,7 @@ class GitControlView extends View
     if !git.isInitialised()
       git.alert "> This project is not a git repository. Either open another project or create a repository."
     else
-      @setWorkspaceTitle(git.getRepository().path.split('/').reverse()[1])
+      @setWorkspaceTitle(git.getRepository().getPath().split('/').reverse()[1])
     @update(true)
 
     return

@@ -132,7 +132,7 @@ module.exports =
     return repo.getUpstreamBranch()
 
   isMerging: ->
-    return fs.existsSync(path.join(repo.path, 'MERGE_HEAD'))
+    return fs.existsSync(path.join(repo.getPath(), 'MERGE_HEAD'))
 
   getBranches: getBranches
 
