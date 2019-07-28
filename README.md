@@ -1,3 +1,9 @@
+#### disclaimer
+
+This an up-to-date (2019-07-28) fork of the original git-control project.
+
+I merely forked it from [gforge](https://github.com/gforge/atom-git-control) to publish it on atom's marketplace.
+
 # Atom git-control
 
 ## What
@@ -38,7 +44,11 @@ Pull requests, issues, feature requests are all welcome and encouraged via [http
 
 Discussion and additional input is promoted here: [![Join the chat at https://gitter.im/jacogr/atom-git-control](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jacogr/atom-git-control?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## Maintainers
+## Original Creators
 
  - [MarcelMue](https://github.com/MarcelMue)
  - [Jaco Greeff](https://github.com/jacogr)
+
+## Last Maintainer
+
+ - [gforge](https://github.com/gforge/atom-git-control)
