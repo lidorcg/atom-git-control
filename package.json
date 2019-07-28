@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lidorcg/atom-git-control.git"
+    "url": "git@github.com:lidorcg/atom-git-control.git"
   },
   "license": "MIT",
   "engines": {
