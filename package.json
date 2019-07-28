@@ -1,7 +1,7 @@
 {
   "name": "git-control-fork",
   "main": "./lib/git-control",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Provides a GUI interface to manage all commonly-used git commands. An up-to-date fork",
   "keywords": [
     "git-control",
